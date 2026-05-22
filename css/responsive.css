@@ -1,0 +1,17 @@
+/* Responsivitas */
+/* masih belum responsif di handphone =( */
+/* 1 rem = 16 px */ 
+@media screen and (max-width: 600px) {
+    .project-item {
+        width: 100%;
+        float: none;
+    }
+
+    .skills-container {
+        flex-direction: column;
+    }
+
+    body {
+        padding: 90px 20px 20px 20px;
+    }
+}
