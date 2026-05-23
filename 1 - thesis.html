@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--head itu isinya fungsi-fungsi backstage-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Biar responsif sama perubahan ukuran layar -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <title>Home</title>
+
+    <!--ngelink ke css/desainnya web home-->
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+  </head>
+
+  <!--body itu isi yang ditampilin-->
+    <body>
+        <!-- Navbar -->
+        <header class="header_section">
+            <div class="top-wrapper">     
+            <ul class="navbar">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="index.html#project">Projects</a></li>
+                <li><a href="index.html#contact">Contact</a></li>                
+            </ul>
+           </div> 
+        </header>
+        <!-- Navbar -->
+
+        <!-- Projects -->
+         <div class="intro-project" id="intro-project">
+            <h1>Multi-sensor Embedded System for Muscle Fatigue Analysis</h1>
+            <p>Developed a multi-board biomedical embedded system for synchronized physiological and biomechanical data acquisition during cycling exercise using Arduino-based microcontrollers.  
+            
+            There is three sections in this project, which are:
+            <!-- Nanti tambahin ini:
+            list-style: none;  
+            -->
+            <ul>
+                <li><a href="#part1">Part 1: Hardware & Embedded System Design</a></li>
+                <li><a href="#part2">Part 2: Data Acquisition</a></li>
+                <li><a href="#part3">Part 3: Signal Processing for Data Analysis</a></li>
+            </ul>
+            </p>
+         </div>
+
+         <div class="part" id="part1">
+            <h2>Part 1: Hardware & Embedded System Design</h2>
+            <ol>
+                <strong><li><h3>System Components</h3></li></strong>
+                <div class="component">
+                <img src="images/thesis_1.png">
+                <ul>
+                    <li>1 x Arduino Arduino GIGA R1 WiFi</li>
+                    <li>3 x Arduino Nano 33 BLE Sense Rev2</li>
+                    <li>1 x Arduino Nano</li>
+                    <li>2 x EMG Click sensors</li>
+                    <li>2 x IMU sensors (embedded in Nano 33 BLE Sense Rev2)</li>
+                    <li>1 x PPG heart rate sensor (SKU SEN0203)</li>
+                </ul>
+                </div>
+                
+                <strong><li><h3>Embedded System Architecture</h3></li></strong>
+                <p>The system architecture consists of a master-slave configuration, where the Arduino GIGA R1 WiFi serves as the master controller, coordinating data acquisition from the three Arduino Nano 33 BLE Sense Rev2 boards (slaves) and the Arduino Nano (slave). The rest of the board are connected to the master board using serial communication.The master board is responsible for synchronizing data collection across all sensors and managing communication between the slave boards.</p>
+
+                <ol>
+                    <li><strong>Master Board: Arduino GIGA R1 WiFi</strong></li>
+                    Served as the primary acquisition and processing unit. Responsible for EMG signal acquisition, physiological data synchronization, serial communication management, and real-time data transmission to the computer for visualization and storage.
+                    <li><strong>BLE Central Device: Arduino Nano 33 BLE Sense Rev2</strong></li>
+                    Configured as the BLE central node to receive synchronized IMU data wirelessly from multiple BLE peripheral devices during cycling motion analysis.
+                    <li><strong>BLE Peripheral Devices: Arduino Nano 33 BLE Sense Rev2 </strong></li>
+                    Two peripheral devices were attached to the thigh and shank to acquire accelerometer and gyroscope data from onboard IMU sensors and transmit the data wirelessly to the BLE central device.
+                    <li><strong>Arduino Nano ATmega328P</strong></li>
+                    Used for photoplethysmography (PPG) signal acquisition from the heart rate sensor to estimate heart rate during cycling exercise.
+                </ol>
+            
+            <p>
+                This is what the system looks like when it's all put together. The master board (Arduino GIGA R1 WiFi) is connected to the computer for data visualization and storage, while the BLE peripheral devices are attached to the cyclist's thigh and shank to capture biomechanical data during cycling motion analysis. The Arduino Nano is used for heart rate monitoring through PPG signal acquisition.
+            </p>
+            <img src="images/thesis_2.png" class="img-thesis2">
+            </ol>
+
+         <div class="part" id="part2">
+            <h2>Part 2: Data Acquisition</h2>
+            <p>Data acquisition was performed during a cycling exercise protocol, where the cyclist pedaled on a stationary bike while wearing the BLE peripheral devices on the thigh and shank. The master board (Arduino GIGA R1 WiFi) collected synchronized EMG signals from the EMG Click sensors, IMU data from the BLE peripheral devices, and heart rate data from the Arduino Nano. The acquired data was transmitted in real-time to a computer for visualization and storage using serial communication.
+
+            Below are the example of the program before and after it acquired data during the cycling exercise protocol.
+            </p>
+            <img src="images/thesis_3.png" class="img-thesis3">
+            <p>
+                As you can see, the EMG signals are still full of noise and artifacts, so it needs to be processed using signal processing before analyzing the data. Meanwhile, the IMU data are already calculated as joint angle on the board and the heart rate data is already fine with minimum of noise, so it can be directly analyzed without further processing.
+            </p>
+         </div>
+
+         <div class="part3" id="part3">
+            <h2>Part 3: Signal Processing and Data Analysis</h2>
+            <ol>
+            <strong><li><h3>EMG Signal Preprocessing</h3></li></strong>
+            <p>These features were used for muscle fatigue estimation and machine learning analysis.</p>
+            <img src="images/thesis_4.png">
+            <div class="signal-processing">
+                <div class="signal-processing-section">
+                <h4>Signal Processing</h4>
+                <ul>
+                    <li>Mean removal</li>
+                    <li>Detrending</li>
+                    <li>High-pass filtering</li>
+                    <li>Low-pass filtering</li>
+                    <li>Notch filtering</li>
+                    <li>Signal rectification</li>
+                    <li>Moving average filtering</li>
+                    <li>Linear envelope extraction</li>
+                </ul>
+                </div>
+
+                <div class="signal-processing-section">
+                <h4>Feature Extraction & Analysis</h4>
+                <ul>
+                    <li>Muscle activation analysis</li>
+                    <li>Contraction detection</li>
+                    <li>FFT-based frequency analysis</li>
+                    <li>%MVC analysis</li>
+                </ul>
+                </div>
+                
+                <div class="signal-processing-section">
+                <h4>Visualization</h4>
+                <ul>
+                    <li>Real-time EMG visualization</li>
+                    <li>Raw EMG signals</li>
+                    <li>Filterd EMG signals</li>
+                    <li>FFT spectrum</li>
+                    <li>Contraction analysis</li>
+                </ul>
+                </div>
+            </div>
+
+            <strong><li><h3>2. Feature Extraction & Biomechanics</h3></strong></li>
+            <h4>a. EMG Feature Extraction</h4>
+            <h5>Time-Domain Features</h5>
+            <ul>
+                <li>RMS (Root Mean Square)</li>
+                <li>MAV (Mean Absolute Value)</li>
+                <li>IEMG (Integrated EMG)</li>
+                <li>SSI (Simple Square Integral)</li>
+            </ul>
+            <h5>Frequency-Domain Features</h5>
+            <ul>
+                <li>MNF (Mean Frequency)</li>
+                <li>MDF (Median Frequency)</li>
+            </ul>
+
+            <h4>b. Biomechanical Analysis</h4>
+            <p>There is two parameters that are estimated. Both of knee joint range of motion (ROM) and hip and knee joint torque are estimated using rotational dynamics and anthropometric body parameters.</p>
+
+            <h4>c. Heart Rate Analysis</h4>
+            <p>The heart rate data was analyzed to assess the cyclist's cardiovascular response during the cycling exercise protocol. Does it declined or inclined during the exercise? </p>
+
+         <h4>d. Machine Learning</h4>
+            <p>All of the data extracted from all of the processing above are collected into one big datasets. Machine learning algorithms were applied for muscle fatigue estimation and classification. The performance of machine learning models was evaluated using metrics such as accuracy, precision, recall, and F1-score.</p>
+        </div>
+
+    </body>
+</html>

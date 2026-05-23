@@ -241,3 +241,61 @@ body {
     line-height: 1.8;
 }
 
+.intro-project h1{
+    text-align: center;
+}
+.intro-project li{
+    list-style: none;  
+}
+
+.component {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding-bottom: 40px;
+}
+
+.signal-processing {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding-bottom: 40px;
+}
+
+.signal-processing ul {
+    margin-top: 5px;
+    padding-left: 20px;
+}
+
+.component img {
+    width: 100%; /* Pastikan gambar memenuhi lebar layar */
+    height: 100%; /* Menyesuaikan tinggi dengan lebar */
+    object-fit: cover; /* Agar gambar memenuhi kontainer dengan tetap mempertahankan proporsi */
+    display: block; /* Menghindari inline spacing */
+    margin: 0 auto; /* Tengah-kan gambar di kontainer */*/
+}
+
+.img-thesis2{
+    width: 40%; /* Pastikan gambar memenuhi lebar layar */
+    height: auto; /* Menyesuaikan tinggi dengan lebar */
+    object-fit: cover; /* Agar gambar memenuhi kontainer dengan tetap mempertahankan proporsi */
+    display: block; /* Menghindari inline spacing */
+    margin: 0 auto; /* Tengah-kan gambar di kontainer */
+    text-align: justify; /* Pusatkan teks di dalam kontainer */
+}
+
+.img-thesis3{
+    width: 70%; /* Pastikan gambar memenuhi lebar layar */
+    height: 70%; /* Menyesuaikan tinggi dengan lebar */
+    object-fit: cover; /* Agar gambar memenuhi kontainer dengan tetap mempertahankan proporsi */
+    display: block; /* Menghindari inline spacing */
+    margin: 0 auto; /* Tengah-kan gambar di kontainer */
+}
+
+.part3 img{
+    width: 80%; /* Pastikan gambar memenuhi lebar layar */
+    height: auto; /* Menyesuaikan tinggi dengan lebar */
+    object-fit: cover; /* Agar gambar memenuhi kontainer dengan tetap mempertahankan proporsi */
+    display: block; /* Menghindari inline spacing */
+    margin: 0 auto; /* Tengah-kan gambar di kontainer */
+}
