@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--head itu isinya fungsi-fungsi backstage-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Biar responsif sama perubahan ukuran layar -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <title>Line Follower</title>
+
+    <!--ngelink ke css/desainnya web home-->
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+  </head>
+
+  <!--body itu isi yang ditampilin-->
+    <body>
+        <!-- Navbar -->
+        <header class="header_section">
+            <div class="top-wrapper">     
+            <ul class="navbar">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="index.html#project">Projects</a></li>
+                <li><a href="index.html#contact">Contact</a></li>               
+            </ul>
+           </div> 
+        </header>
+        <!-- Navbar -->
+
+        <!-- Projects -->
+         <div class="intro-project" id="intro-project">
+            <h1>Line Follower with Fuzzy Logic</h1>
+            <p>Developed an autonomous line-following robot using STM32 microcontroller programmed in C. Implemented fuzzy logic control to optimize servo motor response based on feedback from six infrared sensors.</p>
+            </div> 
+            
+        <strong><h3>System Components</h3></strong>
+        <div class="component">
+            <img src="images/linefollower_1.jpg alt='line follower robot components'>">
+            <ul>
+                <li>1 x STM32F103C8T6 (Blue Pill)</li>
+                <li>6 x Infrared Sensors</li>
+                <li>2 x Motor DC Gearbox</li>
+                <li>1 x L298N Motor Driver</li>
+                <li>2 x 18650 Batteries</li>
+                <li>1 x Chassis</li>
+            </ul>
+        </div>
+
+        <strong></strong><h3>Project Overview</h3></strong>
+        <p>
+            The robot moves by reading the position of the white track using six photodiode sensors placed at the front of the robot, divided into right1, right2, right3 and left1, left2, left3 sensors. When a sensor detects a black surface, it is interpreted as logic 1, while a white surface is interpreted as logic 0. <br> <br>
+
+            The sensor data is then used to calculate the error and derror values. Error represents the robot's position relative to the track, while derror represents the change in the previous error value. Both variables are used as inputs for the fuzzy control system. The fuzzy output is used to control the PWM of the right and left motor drivers, allowing each motor speed to be increased or decreased depending on the robot's position on the track. <br><br>
+
+            The difference in speed between the right and left motors affects the robot's turning direction. For example, if the right motor rotates slower while the left motor rotates faster, the robot will turn right, and vice versa. The robot is able to continuously follow the track because the system constantly performs direction correction based on sensor readings and fuzzy calculation results. <br><br>
+            This is the video of how the system works:<br>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/ARhNxjcevvI?si=CRZDLNuph-m3GtUm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </p>
+
+
+
+        
+
+         </body>
+</html>
