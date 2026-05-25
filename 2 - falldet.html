@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--head itu isinya fungsi-fungsi backstage-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Biar responsif sama perubahan ukuran layar -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <title>Home</title>
+
+    <!--ngelink ke css/desainnya web home-->
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+  </head>
+
+  <!--body itu isi yang ditampilin-->
+    <body>
+        <!-- Navbar -->
+        <header class="header_section">
+            <div class="top-wrapper">     
+            <ul class="navbar">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="#project">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>                
+            </ul>
+           </div> 
+        </header>
+        <!-- Navbar -->
+
+            <div class="intro-project" id="intro-project">
+            <h1>Fall Detection Monitoring for Visually Impaired Individuals</h1>
+            <p>An IoT-based fall detection and obstacle monitoring system for visually impaired individuals using ESP8266, MPU6050, and HC-SR04 sensors. The system performs real-time motion monitoring, obstacle detection, and remote data visualization through a web interface.</p> 
+        </div>
+
+        <div>
+                <strong><h3>System Components</h3></strong>
+                <div class="component">
+                <img src="images/falldet_1.jpg">
+                <ul>
+                    <li>1 x ESP8266</li>
+                    <li>1 x HC-SR04 (Ultrasonic Sensor)</li>
+                    <li>1 x MPU6050 (Inertial Measurement Unit)</li>
+                    <li>1 x Passive Buzzer</li>
+                </ul>
+                </div>
+        </div>
+
+                <strong></strong><h3>How does it work?</h3></strong>
+                <div>
+                <ul>
+                    <li>The MPU6050 sensor is used to read accelerometer and gyroscope data for orientation and motion monitoring. The system detects fall conditions by comparing acceleration and gyroscope values with predefined thresholds.</li>
+                    <li> If a fall is detected, the system activates a police siren sound through the buzzer as an alert mechanism and sends a notification via Dweet.io.</li>
+                    <li>The HC-SR04 ultrasonic sensor is used for obstacle detection. It continuously measures the distance to nearby objects and triggers an alert if an obstacle is detected within a certain range.</li>
+                    <li>The ESP8266 sends sensor data to the Dweet.io cloud platform using HTTP GET requests. The transmitted data includes fall detection status, distance, acceleration, gyroscope values.</li>
+                    <li>The website interface is developed using HTML, CSS, and JavaScript.
+                    JavaScript is used to fetch real-time sensor data from Dweet.io using the fetch API. The website dynamically updates sensor values, warnings, and system status information.</li>
+                </ul>
+
+                <p>
+                    This is the video of how the system works, but I somehow lost the final version of the video, so this is the video of the prototype testing, which is not the final version of the system (the fall detection still wasn't working as expected), but it can give you an idea of how the system works.
+                </p>
+
+                <iframe width="420" height="315"
+                src="https://www.youtube.com/embed/1DivYuyqtEI">
+                </iframe>
+
+                <strong><h3>Problem I Encountered</h3></strong>
+                <p>
+                    During the development of the fall detection system, I encountered several challenges. One of the main issues was the sensitivity of the IMU sensor. Sometimes, it was not sensitive enough to detect falls, which I suspect was caused by incorrect accelerometer and gyroscope range settings that affect the sensitivity of the data.<br><br>
+                    
+                    Additionally, using a website as an alarm system for caregivers may not be the most effective solution because caregivers need to continuously monitor the website. It would be more practical and convenient if the alerts were sent through SNS notifications like WhatsApp or Telegram instead. 
+                </p>
+        </div>
+
+
+
+    </body>    
+</html>
