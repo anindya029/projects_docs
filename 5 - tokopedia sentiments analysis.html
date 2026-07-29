@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tokopedia Product Review Sentiment Analysis</title>
+
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="header_section">
+        <div class="top-wrapper">
+            <ul class="navbar">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="index.html#project">Projects</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Introduction -->
+        <section class="intro-project" id="intro-project">
+            <h1>Tokopedia Product Review Sentiment Analysis</h1>
+
+            <p>
+                This project presents an end-to-end <strong>Natural Language Processing (NLP)</strong>
+                pipeline for sentiment analysis of product reviews collected from Tokopedia.
+                The workflow covers the entire process, from automated data collection and text
+                preprocessing to sentiment labeling, feature extraction, and machine learning
+                classification.
+            </p>
+
+            <p>
+                The primary objective is to classify Indonesian product reviews into
+                <strong>Positive</strong>, <strong>Neutral</strong>, or
+                <strong>Negative</strong> sentiments using traditional NLP techniques and
+                machine learning models.
+            </p>
+        </section>
+
+        <!-- GitHub -->
+        <section class="project-section">
+            <h2>Project Repository</h2>
+
+            <p>
+                You can explore the complete source code, implementation details,
+                and project documentation through the GitHub repository below.
+            </p>
+
+            <a href="https://github.com/anindya029/tokopedia-review-sentiment-analysis"
+                target="_blank"
+                class="btn">
+                View on GitHub
+            </a>
+        </section>
+
+        <!-- Features -->
+        <section class="project-section">
+            <h2>Key Features</h2>
+
+            <ul>
+                <li>Automated review scraping from Tokopedia using Selenium.</li>
+                <li>Indonesian-specific text preprocessing and normalization.</li>
+                <li>Lexicon-based sentiment labeling.</li>
+                <li>Feature extraction using Bag of Words (BoW) and TF-IDF.</li>
+                <li>Sentiment classification using Logistic Regression and Multi-Layer Perceptron (MLP).</li>
+                <li>Performance evaluation using Accuracy, Precision, Recall, F1-score, and Confusion Matrix.</li>
+            </ul>
+        </section>
+
+        <!-- Workflow -->
+        <section class="project-section">
+            <h2>Workflow</h2>
+
+            <ol>
+                <li>Tokopedia Reviews</li>
+                <li>Data Scraping</li>
+                <li>Text Preprocessing</li>
+                <li>Sentiment Labeling</li>
+                <li>Feature Extraction</li>
+                <li>Machine Learning Classification</li>
+                <li>Model Evaluation</li>
+            </ol>
+        </section>
+
+        <!-- Data Collection -->
+        <section class="project-section">
+            <h2>Data Collection</h2>
+
+            <p>
+                Customer reviews are automatically collected from Tokopedia product pages
+                using <strong>Selenium</strong> and <strong>BeautifulSoup</strong>.
+                The scraper navigates through multiple review pages, extracts review text
+                and star ratings, and stores the collected data in CSV format for further
+                analysis.
+            </p>
+        </section>
+
+        <!-- Preprocessing -->
+        <section class="project-section">
+            <h2>Text Preprocessing</h2>
+
+            <p>
+                The collected reviews undergo several preprocessing steps tailored for
+                Indonesian-language text to improve data quality.
+            </p>
+
+            <ul>
+                <li>Lowercase conversion</li>
+                <li>URL, mention, hashtag, and punctuation removal</li>
+                <li>Number and special character removal</li>
+                <li>Duplicate and missing value removal</li>
+                <li>Indonesian stopword removal</li>
+                <li>Indonesian stemming</li>
+                <li>Slang word normalization</li>
+                <li>Tokenization</li>
+                <li>Additional English stopword removal</li>
+            </ul>
+        </section>
+
+        <!-- Sentiment -->
+        <section class="project-section">
+            <h2>Sentiment Analysis</h2>
+
+            <p>
+                Sentiment labels are generated automatically using an Indonesian sentiment
+                lexicon, eliminating the need for manual annotation.
+            </p>
+
+            <ul>
+                <li>Positive</li>
+                <li>Neutral</li>
+                <li>Negative</li>
+            </ul>
+        </section>
+
+        <!-- Feature Extraction -->
+        <section class="project-section">
+            <h2>Feature Extraction</h2>
+
+            <p>
+                Two text vectorization techniques are implemented and compared.
+            </p>
+
+            <ul>
+                <li><strong>Bag of Words (BoW)</strong> – Represents text based on word occurrence frequencies.</li>
+                <li><strong>TF-IDF</strong> – Represents text by weighting words according to their importance within the dataset.</li>
+            </ul>
+        </section>
+
+        <!-- Models -->
+        <section class="project-section">
+            <h2>Machine Learning Models</h2>
+
+            <h3>Logistic Regression</h3>
+
+            <p>
+                A lightweight linear classifier commonly used as a strong baseline for
+                text classification tasks.
+            </p>
+
+            <h3>Multi-Layer Perceptron (MLP)</h3>
+
+            <p>
+                A fully connected neural network consisting of multiple dense layers with
+                ReLU activation and Dropout regularization, trained using the Adam optimizer
+                and Sparse Categorical Crossentropy loss.
+            </p>
+
+            <p>
+                Both models are evaluated using <strong>80:20</strong> and
+                <strong>70:30</strong> train-test splits.
+            </p>
+        </section>
+
+        <!-- Evaluation -->
+        <section class="project-section">
+            <h2>Evaluation</h2>
+
+            <ul>
+                <li>Accuracy</li>
+                <li>Precision</li>
+                <li>Recall</li>
+                <li>F1-score</li>
+                <li>Confusion Matrix</li>
+            </ul>
+        </section>
+
+        <!-- Technologies -->
+        <section class="project-section">
+            <h2>Technologies Used</h2>
+
+            <ul>
+                <li>Python</li>
+                <li>Selenium</li>
+                <li>BeautifulSoup</li>
+                <li>Pandas</li>
+                <li>NLTK</li>
+                <li>Sastrawi</li>
+                <li>indoNLP</li>
+                <li>Scikit-learn</li>
+                <li>TensorFlow / Keras</li>
+                <li>Gensim</li>
+            </ul>
+        </section>
+
+        <!-- Highlights -->
+        <section class="project-section">
+            <h2>Project Highlights</h2>
+
+            <ul>
+                <li>Developed a complete NLP pipeline from data collection to model evaluation.</li>
+                <li>Applied Indonesian-specific preprocessing techniques.</li>
+                <li>Compared Bag of Words (BoW) and TF-IDF feature extraction methods.</li>
+                <li>Evaluated both traditional machine learning and neural network models.</li>
+                <li>Built an automated workflow adaptable to Indonesian e-commerce review analysis.</li>
+            </ul>
+        </section>
+
+    </main>
+
+</body>
+
+</html>
